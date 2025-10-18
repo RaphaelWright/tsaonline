@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    /* Color Palette */
+    --blueprint-blue: #0066FF;
+    --pure-white: #FFFFFF;
+    --graphite-black: #1A1A1A;
+    --electric-lime: #C5FF00;
+    --mist-gray: #E5E5E5;
+    
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 221 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 221 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 221 100% 50%;
+    --radius: 0rem;
+  }
+}
+
+/* Typography */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--pure-white);
+  color: var(--graphite-black);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mist-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--graphite-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blueprint-blue);
+}
+
+/* Custom Cursor */
+body {
+  cursor: none;
+}
+
+a, button {
+  cursor: none;
+}
+
+/* Blueprint Grid Animation */
+@keyframes blueprintMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.blueprint-grid {
+  background-image: 
+    linear-gradient(var(--blueprint-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-blue) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.03;
+  animation: blueprintMove 20s linear infinite;
+}
+
+.blueprint-grid-static {
+  background-image: 
+    linear-gradient(var(--mist-gray) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mist-gray) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+/* Sharp Transitions */
+* {
+  transition: none;
+}
+
+button, a, .transition-fast {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Process Step Line Draw Animation */
+.process-step {
+  position: relative;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 1px;
+  background: var(--blueprint-blue);
+  transition: width 1s ease-out;
+}
+
+.process-step.line-draw::before {
+  width: 100%;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+}
