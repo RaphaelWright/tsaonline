@@ -13,14 +13,12 @@ export function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    // TODO: Integrate with backend API or email service
     alert('Thank you for reaching out! We will get back to you soon.');
     setFormData({ name: '', email: '', company: '', message: '' });
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -139,10 +137,7 @@ export function ContactPage() {
 
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label
-                htmlFor="name"
-                className="block mb-2 tracking-wider text-[#1A1A1A]/70"
-              >
+              <label htmlFor="name" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
                 YOUR NAME
               </label>
               <input
@@ -158,10 +153,7 @@ export function ContactPage() {
             </div>
 
             <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label
-                htmlFor="email"
-                className="block mb-2 tracking-wider text-[#1A1A1A]/70"
-              >
+              <label htmlFor="email" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
                 EMAIL ADDRESS
               </label>
               <input
@@ -177,10 +169,7 @@ export function ContactPage() {
             </div>
 
             <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label
-                htmlFor="company"
-                className="block mb-2 tracking-wider text-[#1A1A1A]/70"
-              >
+              <label htmlFor="company" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
                 COMPANY / STARTUP
               </label>
               <input
@@ -195,10 +184,7 @@ export function ContactPage() {
             </div>
 
             <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label
-                htmlFor="message"
-                className="block mb-2 tracking-wider text-[#1A1A1A]/70"
-              >
+              <label htmlFor="message" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
                 PROJECT DETAILS
               </label>
               <textarea
@@ -226,9 +212,8 @@ export function ContactPage() {
 
           <div className="mt-16 p-8 bg-[#F5F5F5] border-l-4 border-[#C5FF00]">
             <p className="text-[#1A1A1A]/70">
-              <strong className="text-[#1A1A1A]">Response Time:</strong> We
-              typically respond within 24 hours. For urgent inquiries, please
-              call us directly.
+              <strong className="text-[#1A1A1A]">Response Time:</strong> We typically respond within
+              24 hours. For urgent inquiries, please call us directly.
             </p>
           </div>
         </motion.div>
