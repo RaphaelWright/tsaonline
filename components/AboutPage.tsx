@@ -86,9 +86,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
   const stats = [
-    { number: '150+', label: 'Projects Delivered' },
-    { number: '40+', label: 'Team Members' },
-    { number: '15', label: 'Countries Served' },
+
+    { number: '20+', label: 'Team Members' },
+    { number: '6', label: 'Countries Served' },
     { number: '98%', label: 'Client Satisfaction' },
   ];
 
