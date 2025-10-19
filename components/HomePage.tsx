@@ -59,7 +59,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We Design the Future of Startups.
+            We Design IT Solutions for Businesses & Brands.
           </motion.h1>
           <motion.p
             className="mb-12 text-[#1A1A1A]/70 max-w-2xl mx-auto"
@@ -67,7 +67,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Consulting. Development. Marketing. Architecture for Innovation.
+            Consulting. Software Development. Advertising and Marketing. 
           </motion.p>
           <motion.button
             className="bg-[#0066FF] text-white px-12 py-4 border-4 border-[#0066FF] hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3"
