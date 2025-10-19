@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Send } from 'lucide-react';
 import { useState } from 'react';
 

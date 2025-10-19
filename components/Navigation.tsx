@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Home, Briefcase, Mail, Menu, Info } from 'lucide-react';
 import { useState } from 'react';
 

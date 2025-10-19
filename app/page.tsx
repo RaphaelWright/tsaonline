@@ -1,11 +1,13 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { CustomCursor } from './components/CustomCursor';
-import { Navigation } from './components/Navigation';
-import { HomePage } from './components/HomePage';
-import { AboutPage } from './components/AboutPage';
-import { PortfolioPage } from './components/PortfolioPage';
-import { ContactPage } from './components/ContactPage';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CustomCursor } from '@/components/CustomCursor';
+import { Navigation } from '@/components/Navigation';
+import { HomePage } from '@/components/HomePage';
+import { AboutPage } from '@/components/AboutPage';
+import { PortfolioPage } from '@/components/PortfolioPage';
+import { ContactPage } from '@/components/ContactPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -13,7 +15,7 @@ export default function App() {
 
   const handleNavigate = (page: string) => {
     if (page === currentPage) return;
-    
+
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentPage(page);
@@ -49,7 +51,7 @@ export default function App() {
     <div className="relative min-h-screen bg-white">
       <CustomCursor />
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      
+
       {/* Page Transition Overlay */}
       <AnimatePresence>
         {isTransitioning && (
