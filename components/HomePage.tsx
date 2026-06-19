@@ -85,12 +85,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png',
     },
     { name: 'Sentry', logo: 'https://sentry-brand.storage.googleapis.com/sentry-logo-black.png' },
-    { name: 'PostHog', logo: 'https://posthog.com/static/brand/posthog-logo.png' },
     { name: 'Stripe', logo: 'https://stripe.com/img/v3/home/social.png' },
-    {
-      name: 'HubSpot',
-      logo: 'https://hubspot-content-assets.s3.amazonaws.com/brandhub/hubspot-logo.svg',
-    },
+    
     { name: 'Supabase', logo: 'https://supabase.com/images/logo-dark.png' },
     { name: 'Figma', logo: 'https://static.figma.com/app/icon/1/favicon.png' },
   ];
@@ -283,7 +279,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h2 className="mb-4">Partners & tools we rely on</h2>
+            <h2 className="mb-4">Some Partners & tools we rely on</h2>
             <p className="text-[#1A1A1A]/70">
               We use trusted platforms to build faster, measure better, and support growth.
             </p>
