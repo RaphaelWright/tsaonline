@@ -333,9 +333,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 viewport={{ once: true }}
               >
                 <div>
-                  <p className="text-sm tracking-[0.25em] text-[#0066FF] group-hover:text-[#C5FF00] transition-fast mb-6">
-                    {testimonial.group.toUpperCase()}
-                  </p>
                   <p className="text-[#1A1A1A]/80 group-hover:text-white/90 transition-fast leading-relaxed">
                     "{testimonial.quote}"
                   </p>
