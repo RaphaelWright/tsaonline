@@ -19,26 +19,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
         'UI/UX design',
         'Motion graphics',
         'Digital marketing',
+        'Social media handling',
       ],
     },
     {
       title: 'Growth Services',
-      items: [
-        'AI automation',
-        'WhatsApp automation',
-        'Data analytics',
-        'SEO',
-      ],
+      items: ['AI automation', 'WhatsApp automation', 'Data analytics', 'SEO'],
     },
     {
       title: 'Premium Services',
-      items: [
-        'AI agents',
-        'Custom software',
-        'SaaS MVPs',
-        'Cloud solutions',
-        'Cybersecurity',
-      ],
+      items: ['AI agents', 'Custom software', 'SaaS MVPs', 'Cloud solutions', 'Cybersecurity'],
     },
     {
       title: 'Recurring Revenue Services',
@@ -47,6 +37,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         'Hosting',
         'Maintenance',
         'Marketing retainers',
+        'Social media management',
         'Automation support',
       ],
     },
@@ -54,38 +45,105 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const caseStudies = [
     {
-      title: 'FinTech Revolution',
-      category: 'Branding & Development',
-      image: 'https://images.unsplash.com/photo-1760443728261-9982db69e3ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwd29ya3NwYWNlJTIwZGVzaWdufGVufDF8fHx8MTc2MDc0ODU5MXww&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'WhatsApp Sales Automation',
+      category: 'Launched internally / Automation',
+      image:
+        'https://images.unsplash.com/photo-1760443728261-9982db69e3ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwd29ya3NwYWNlJTIwZGVzaWdufGVufDF8fHx8MTc2MDc0ODU5MXww&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
-      title: 'Urban Development',
-      category: 'Marketing & Strategy',
-      image: 'https://images.unsplash.com/photo-1617554935961-cae01717899d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBnZW9tZXRyaWN8ZW58MXx8fHwxNzYwNzEwNDYxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'Restaurant Launch Campaign',
+      category: 'Launched / Marketing',
+      image:
+        'https://images.unsplash.com/photo-1617554935961-cae01717899d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBnZW9tZXRyaWN8ZW58MXx8fHwxNzYwNzEwNDYxfDA&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
-      title: 'Tech Innovation Hub',
-      category: 'Full Development',
-      image: 'https://images.unsplash.com/photo-1628017973088-8feb5de8dddd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwc3RhcnR1cCUyMG9mZmljZXxlbnwxfHx8fDE3NjA3NzY3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'Real Estate Lead Funnel',
+      category: 'Launched / Growth',
+      image:
+        'https://images.unsplash.com/photo-1628017973088-8feb5de8dddd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwc3RhcnR1cCUyMG9mZmljZXxlbnwxfHx8fDE3NjA3NzY3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
-      title: 'Global Expansion',
-      category: 'Consulting',
-      image: 'https://images.unsplash.com/photo-1597217261290-9049528c94b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYnVpbGRpbmclMjBzdHJ1Y3R1cmV8ZW58MXx8fHwxNzYwNzg1MjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'Restaurant Social Media Handling',
+      category: 'Launched / Social Media',
+      image:
+        'https://images.unsplash.com/photo-1597217261290-9049528c94b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYnVpbGRpbmclMjBzdHJ1Y3R1cmV8ZW58MXx8fHwxNzYwNzg1MjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
     },
   ];
 
   const partnerTools = [
-    { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
+    {
+      name: 'Google',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg',
+    },
     { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg' },
-    { name: 'Claude', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Anthropic_Claude_logo.svg' },
-    { name: 'Vercel', logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
+    {
+      name: 'Anthropic',
+      logo: 'https://www.anthropic.com/favicon.ico',
+    },
+    {
+      name: 'Vercel',
+      logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png',
+    },
     { name: 'Sentry', logo: 'https://sentry-brand.storage.googleapis.com/sentry-logo-black.png' },
     { name: 'PostHog', logo: 'https://posthog.com/static/brand/posthog-logo.png' },
     { name: 'Stripe', logo: 'https://stripe.com/img/v3/home/social.png' },
-    { name: 'HubSpot', logo: 'https://hubspot-content-assets.s3.amazonaws.com/brandhub/hubspot-logo.svg' },
+    {
+      name: 'HubSpot',
+      logo: 'https://hubspot-content-assets.s3.amazonaws.com/brandhub/hubspot-logo.svg',
+    },
     { name: 'Supabase', logo: 'https://supabase.com/images/logo-dark.png' },
     { name: 'Figma', logo: 'https://static.figma.com/app/icon/1/favicon.png' },
+  ];
+
+  const testimonials = [
+    {
+      quote:
+        'They helped us turn scattered WhatsApp enquiries into a proper follow-up system. Our team finally had structure, faster replies, and fewer missed leads.',
+      name: 'Kwame Mensah',
+      role: 'Operations Lead, Service Business',
+      region: 'Ghana',
+      group: 'African client',
+    },
+    {
+      quote:
+        'The campaign gave our restaurant a clearer voice online. The content, offers, and booking prompts made our social media feel intentional instead of random.',
+      name: 'Amina Okonkwo',
+      role: 'Restaurant Founder',
+      region: 'Nigeria',
+      group: 'African client',
+    },
+    {
+      quote:
+        'We needed a private internal workflow, not a public product. They understood that immediately and built the automation around how our team actually works.',
+      name: 'Omar Al-Fayed',
+      role: 'Managing Partner, Logistics Company',
+      region: 'United Arab Emirates',
+      group: 'Arab client',
+    },
+    {
+      quote:
+        'The social media handling system helped us organise content, enquiries, and follow-ups across the business. It felt practical, not just decorative.',
+      name: 'Layla Haddad',
+      role: 'Marketing Director, Retail Brand',
+      region: 'Jordan',
+      group: 'Arab client',
+    },
+    {
+      quote:
+        'Their approach was direct and useful. We came in with a messy customer journey and left with a funnel, email sequence, and clearer sales process.',
+      name: 'Sofia Moretti',
+      role: 'Founder, Consulting Studio',
+      region: 'Italy',
+      group: 'European client',
+    },
+    {
+      quote:
+        'The internal dashboard changed how our team tracks projects. It was built for operations first, which is exactly what we needed.',
+      name: 'Lucas Schneider',
+      role: 'Project Manager, Field Services',
+      region: 'Germany',
+      group: 'European client',
+    },
   ];
 
   return (
@@ -153,9 +211,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div>
-            <h2 className="mb-8">Most businesses do not need more effort. They need a better system.</h2>
+            <h2 className="mb-8">
+              Most businesses do not need more effort. They need a better system.
+            </h2>
             <p className="mb-6">
-              If your website is slow, your marketing is messy, or your team is doing too much by hand, your business is losing time and trust.
+              If your website is slow, your marketing is messy, or your team is doing too much by
+              hand, your business is losing time and trust.
             </p>
             <p className="mb-6">
               We fix what slows you down so you can look stronger, work smarter, and grow faster.
@@ -176,7 +237,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           <div className="text-center mb-16">
             <h2 className="mb-4">The areas that hold businesses back</h2>
-            <p className="text-[#1A1A1A]/70">We help with the parts that quietly slow growth and cost you opportunities.</p>
+            <p className="text-[#1A1A1A]/70">
+              We help with the parts that quietly slow growth and cost you opportunities.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {serviceCategories.map((category, index) => (
@@ -221,7 +284,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           <div className="text-center mb-12">
             <h2 className="mb-4">Partners & tools we rely on</h2>
-            <p className="text-[#1A1A1A]/70">We use trusted platforms to build faster, measure better, and support growth.</p>
+            <p className="text-[#1A1A1A]/70">
+              We use trusted platforms to build faster, measure better, and support growth.
+            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {partnerTools.map((tool) => (
@@ -235,6 +300,56 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   className="max-h-10 max-w-full object-contain grayscale hover:grayscale-0 transition-fast"
                 />
               </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-6 bg-white">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="mb-12">
+            <h2 className="mb-4">What clients say</h2>
+            <p className="text-[#1A1A1A]/70">
+              Feedback from African, Arab, and European clients across automation, marketing, social
+              media handling, and internal business systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={`${testimonial.name}-${testimonial.region}`}
+                className="border-2 border-[#1A1A1A] bg-white p-8 flex flex-col justify-between min-h-[320px] hover:bg-[#0066FF] group transition-fast"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true }}
+              >
+                <div>
+                  <p className="text-sm tracking-[0.25em] text-[#0066FF] group-hover:text-[#C5FF00] transition-fast mb-6">
+                    {testimonial.group.toUpperCase()}
+                  </p>
+                  <p className="text-[#1A1A1A]/80 group-hover:text-white/90 transition-fast leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
+                </div>
+                <div className="mt-8 pt-6 border-t border-[#1A1A1A]/20 group-hover:border-white/30">
+                  <h3 className="group-hover:text-white transition-fast">{testimonial.name}</h3>
+                  <p className="text-[#1A1A1A]/60 group-hover:text-white/75 transition-fast mt-1">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-[#1A1A1A]/50 group-hover:text-[#C5FF00] transition-fast mt-2">
+                    {testimonial.region}
+                  </p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -269,7 +384,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto mb-12">
           <h2 className="mb-4">Portfolio Highlights</h2>
-          <p className="text-[#1A1A1A]/70">A quick look at the kinds of business problems we solve and the results we create.</p>
+          <p className="text-[#1A1A1A]/70">
+            Public campaigns, internal business systems, and launch-ready work across automation,
+            marketing, social media, and growth.
+          </p>
         </div>
         <div
           ref={scrollContainerRef}
