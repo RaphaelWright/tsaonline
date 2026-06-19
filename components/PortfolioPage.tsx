@@ -8,80 +8,98 @@ export function PortfolioPage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const categories = ['all', 'branding', 'development', 'marketing', 'consulting'];
+  const categories = ['all', 'branding', 'development', 'growth', 'automation'];
 
   const projects = [
     {
       id: 1,
-      title: 'FinTech Revolution',
-      category: 'development',
-      description: 'A complete digital banking platform built from the ground up, featuring real-time transactions, advanced security, and intuitive UX design.',
+      title: 'The website looks good, but leads are still low.',
+      category: 'growth',
+      scenario: 'A business had traffic, but visitors were not converting into real enquiries.',
+      problem: 'The message was unclear, the offer was weak, and the site did not guide people to take action.',
+      solution:
+        'We simplified the messaging, improved the layout, added stronger calls to action, and rebuilt the conversion flow so visitors knew exactly what to do next.',
+      outcome: 'The business saw a clear increase in qualified enquiries and better confidence in their online presence.',
       images: [
         'https://images.unsplash.com/photo-1760443728261-9982db69e3ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwd29ya3NwYWNlJTIwZGVzaWdufGVufDF8fHx8MTc2MDc0ODU5MXww&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2024',
-      client: 'Digital Bank Co.',
+      result: '+38% enquiries',
     },
     {
       id: 2,
-      title: 'Urban Development',
-      category: 'marketing',
-      description: 'Strategic marketing campaign for a major real estate development, including brand positioning, digital presence, and event activations.',
+      title: 'The team is busy, but the business still feels disorganized.',
+      category: 'automation',
+      scenario: 'A growing company was wasting time on repetitive follow-ups and manual admin tasks.',
+      problem: 'Important messages were delayed, internal processes were slow, and staff spent too much time doing work that could be automated.',
+      solution:
+        'We introduced workflow automation, smart follow-up systems, and better processes that saved time while keeping communication consistent.',
+      outcome: 'The team became faster, more responsive, and much less dependent on manual effort.',
       images: [
         'https://images.unsplash.com/photo-1617554935961-cae01717899d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBnZW9tZXRyaWN8ZW58MXx8fHwxNzYwNzEwNDYxfDA&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2024',
-      client: 'Urban Spaces Ltd.',
+      result: 'Hours saved weekly',
     },
     {
       id: 3,
-      title: 'Tech Innovation Hub',
+      title: 'The brand looks outdated, and customers do not trust it fully.',
       category: 'branding',
-      description: 'Complete brand identity system for a tech accelerator, including logo design, brand guidelines, and environmental design.',
+      scenario: 'A business had strong experience, but its visual identity did not reflect the quality of its work.',
+      problem: 'The brand felt inconsistent, the design was dated, and customers were not fully confident in the company.',
+      solution:
+        'We refined the brand positioning, updated the visual system, and created a clearer identity that matched the business value.',
+      outcome: 'The brand started feeling more premium, professional, and memorable across every touchpoint.',
       images: [
         'https://images.unsplash.com/photo-1628017973088-8feb5de8dddd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwc3RhcnR1cCUyMG9mZmljZXxlbnwxfHx8fDE3NjA3NzY3NTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2024',
-      client: 'Innovation Labs',
+      result: 'More trust, stronger brand recall',
     },
     {
       id: 4,
-      title: 'Global Expansion',
-      category: 'consulting',
-      description: 'Strategic consulting for international market entry, including business planning, competitive analysis, and operational frameworks.',
+      title: 'The business is growing, but the systems are not ready for it.',
+      category: 'development',
+      scenario: 'A company had momentum, but its tools and digital setup could not support the next stage of growth.',
+      problem: 'The website, workflows, and data handling were not built for scale, which created bottlenecks and confusion.',
+      solution:
+        'We rebuilt the core digital setup, improved the user journey, and created a more reliable system that could support future growth.',
+      outcome: 'The business became easier to manage, faster to operate, and better positioned to scale.',
       images: [
         'https://images.unsplash.com/photo-1597217261290-9049528c94b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYnVpbGRpbmclMjBzdHJ1Y3R1cmV8ZW58MXx8fHwxNzYwNzg1MjY3fDA&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2023',
-      client: 'Global Ventures',
+      result: 'Better scalability and control',
     },
     {
       id: 5,
-      title: 'E-Commerce Platform',
+      title: 'The business is active online, but customers still do not understand the value.',
       category: 'development',
-      description: 'Full-stack e-commerce solution with advanced features including AI recommendations, dynamic pricing, and seamless checkout.',
+      scenario: 'A company had a digital presence, but the message and customer journey were not clear enough.',
+      problem: 'The site was not helping people understand what the business offered, why it mattered, or why they should trust it.',
+      solution:
+        'We redesigned the experience around clarity, simplified the content, and improved the flow from first visit to final action.',
+      outcome: 'Visitors started understanding the offer much faster, which improved both trust and conversion.',
       images: [
         'https://images.unsplash.com/photo-1759395162607-e88e492efe76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGFyY2hpdGVjdHVyZSUyMGJsdWVwcmludHxlbnwxfHx8fDE3NjA3ODUyNjd8MA&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2023',
-      client: 'Retail Dynamics',
+      result: 'Better clarity and higher trust',
     },
     {
       id: 6,
-      title: 'Brand Transformation',
+      title: 'The business wants to grow, but the process is still unclear.',
       category: 'branding',
-      description: 'Complete rebrand for a legacy company entering the digital age, modernizing their identity while respecting heritage.',
+      scenario: 'A company had ambition but no clear framework for how to present itself and scale its message.',
+      problem: 'Different channels were sending different signals, and the audience was not getting a consistent story.',
+      solution:
+        'We aligned the brand message, cleaned up the positioning, and created a stronger structure for how the business should communicate.',
+      outcome: 'The business became easier to understand, easier to trust, and stronger in the market.',
       images: [
         'https://images.unsplash.com/photo-1617554935961-cae01717899d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBnZW9tZXRyaWN8ZW58MXx8fHwxNzYwNzEwNDYxfDA&ixlib=rb-4.1.0&q=80&w=1080',
       ],
       link: '#',
-      year: '2023',
-      client: 'Heritage Corp.',
+      result: 'Clearer positioning and stronger market presence',
     },
   ];
 
@@ -108,9 +126,9 @@ export function PortfolioPage() {
       >
         <div className="absolute inset-0 blueprint-grid opacity-50 pointer-events-none" />
         <div className="relative z-10 py-12">
-          <h1 className="mb-4">Our Work Is Our Blueprint.</h1>
+          <h1 className="mb-4">Every strong business starts with a clear problem.</h1>
           <p className="text-[#1A1A1A]/70">
-            Every project is a structure designed for success.
+            Here are the kinds of challenges we solve when businesses need stronger systems, better growth, and more trust.
           </p>
         </div>
       </motion.div>
@@ -166,6 +184,7 @@ export function PortfolioPage() {
                   {project.category.toUpperCase()}
                 </p>
                 <h3 className="text-white">{project.title}</h3>
+                <p className="text-white/80 text-sm mt-2">{project.scenario}</p>
               </div>
             </motion.div>
           ))}
@@ -207,12 +226,12 @@ export function PortfolioPage() {
                   <h2 className="text-white mb-4">{currentProject.title}</h2>
                   <div className="flex gap-8 mb-6">
                     <div>
-                      <p className="text-white/50 mb-1">Client</p>
-                      <p className="text-white">{currentProject.client}</p>
+                      <p className="text-white/50 mb-1">Outcome</p>
+                      <p className="text-white">{currentProject.result}</p>
                     </div>
                     <div>
-                      <p className="text-white/50 mb-1">Year</p>
-                      <p className="text-white">{currentProject.year}</p>
+                      <p className="text-white/50 mb-1">Focus</p>
+                      <p className="text-white">{currentProject.category}</p>
                     </div>
                   </div>
                 </div>
@@ -252,11 +271,24 @@ export function PortfolioPage() {
                   )}
                 </div>
 
-                {/* Description */}
-                <div className="mb-8">
-                  <p className="text-white/80 leading-relaxed">
-                    {currentProject.description}
-                  </p>
+                {/* Scenario and Solution */}
+                <div className="space-y-8 mb-8">
+                  <div>
+                    <p className="text-[#C5FF00] mb-2 tracking-wider">SCENARIO</p>
+                    <p className="text-white/80 leading-relaxed">{currentProject.scenario}</p>
+                  </div>
+                  <div>
+                    <p className="text-[#C5FF00] mb-2 tracking-wider">THE PROBLEM</p>
+                    <p className="text-white/80 leading-relaxed">{currentProject.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-[#C5FF00] mb-2 tracking-wider">THE SOLUTION</p>
+                    <p className="text-white/80 leading-relaxed">{currentProject.solution}</p>
+                  </div>
+                  <div>
+                    <p className="text-[#C5FF00] mb-2 tracking-wider">THE OUTCOME</p>
+                    <p className="text-white/80 leading-relaxed">{currentProject.outcome}</p>
+                  </div>
                 </div>
 
                 {/* View Live Button */}

@@ -32,11 +32,12 @@ export const metadata: Metadata = {
     title: 'The Startup Architects | Building the Future',
     description: 'Consulting. Development. Marketing. Architecture for Innovation.',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

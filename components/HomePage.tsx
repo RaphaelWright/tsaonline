@@ -10,13 +10,46 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const services = [
-    { title: 'Consultation', description: 'Strategic planning and business architecture' },
-    { title: 'Advertisement', description: 'Brand positioning and market reach' },
-    { title: 'Web & Software Dev', description: 'Digital products built to scale' },
-    { title: 'Marketing', description: 'Digital & traditional campaigns' },
-    { title: 'Event Planning', description: 'Memorable brand experiences' },
-    { title: 'IT Assistance', description: 'Technical support and infrastructure' },
+  const serviceCategories = [
+    {
+      title: 'Core Services',
+      items: [
+        'Web development',
+        'Mobile app development',
+        'UI/UX design',
+        'Motion graphics',
+        'Digital marketing',
+      ],
+    },
+    {
+      title: 'Growth Services',
+      items: [
+        'AI automation',
+        'WhatsApp automation',
+        'Data analytics',
+        'SEO',
+      ],
+    },
+    {
+      title: 'Premium Services',
+      items: [
+        'AI agents',
+        'Custom software',
+        'SaaS MVPs',
+        'Cloud solutions',
+        'Cybersecurity',
+      ],
+    },
+    {
+      title: 'Recurring Revenue Services',
+      items: [
+        'Managed IT',
+        'Hosting',
+        'Maintenance',
+        'Marketing retainers',
+        'Automation support',
+      ],
+    },
   ];
 
   const caseStudies = [
@@ -42,6 +75,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
   ];
 
+  const partnerTools = [
+    { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
+    { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg' },
+    { name: 'Claude', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Anthropic_Claude_logo.svg' },
+    { name: 'Vercel', logo: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
+    { name: 'Sentry', logo: 'https://sentry-brand.storage.googleapis.com/sentry-logo-black.png' },
+    { name: 'PostHog', logo: 'https://posthog.com/static/brand/posthog-logo.png' },
+    { name: 'Stripe', logo: 'https://stripe.com/img/v3/home/social.png' },
+    { name: 'HubSpot', logo: 'https://hubspot-content-assets.s3.amazonaws.com/brandhub/hubspot-logo.svg' },
+    { name: 'Supabase', logo: 'https://supabase.com/images/logo-dark.png' },
+    { name: 'Figma', logo: 'https://static.figma.com/app/icon/1/favicon.png' },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -59,7 +105,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We Design IT Solutions for Businesses & Brands.
+            If your business is still guessing, you are already losing.
           </motion.h1>
           <motion.p
             className="mb-12 text-[#1A1A1A]/70 max-w-2xl mx-auto"
@@ -67,7 +113,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Consulting. Software Development. Advertising and Marketing. 
+            We help businesses build better websites, smarter systems, and stronger growth.
           </motion.p>
           <motion.button
             className="bg-[#0066FF] text-white px-12 py-4 border-4 border-[#0066FF] hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3"
@@ -78,7 +124,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             whileTap={{ scale: 0.95 }}
             onClick={() => onNavigate('contact')}
           >
-            <span className="tracking-wider">START A PROJECT</span>
+            <span className="tracking-wider">BOOK A STRATEGY CALL</span>
             <ArrowRight size={20} />
           </motion.button>
         </motion.div>
@@ -107,14 +153,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div>
-            <h2 className="mb-8">Structure Meets Strategy.</h2>
+            <h2 className="mb-8">Most businesses do not need more effort. They need a better system.</h2>
             <p className="mb-6">
-              At The Startup Architects, we don't just build businesses—we engineer them. Our approach
-              combines the precision of architectural thinking with the agility of modern innovation.
+              If your website is slow, your marketing is messy, or your team is doing too much by hand, your business is losing time and trust.
             </p>
             <p className="mb-6">
-              Every startup is a structure waiting to be designed. We create the blueprints for sustainable
-              growth, scalable systems, and brands that stand the test of time.
+              We fix what slows you down so you can look stronger, work smarter, and grow faster.
             </p>
             <div className="w-20 h-1 bg-[#C5FF00] mt-8" />
           </div>
@@ -130,28 +174,67 @@ export function HomePage({ onNavigate }: HomePageProps) {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-center mb-16">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {services.map((service, index) => (
+          <div className="text-center mb-16">
+            <h2 className="mb-4">The areas that hold businesses back</h2>
+            <p className="text-[#1A1A1A]/70">We help with the parts that quietly slow growth and cost you opportunities.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {serviceCategories.map((category, index) => (
               <motion.div
-                key={service.title}
-                className="aspect-square border-2 border-[#1A1A1A] bg-white p-8 flex flex-col justify-end group hover:bg-[#0066FF] transition-fast cursor-pointer relative overflow-hidden"
+                key={category.title}
+                className="border-2 border-[#1A1A1A] bg-white p-8 group hover:bg-[#0066FF] transition-fast"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.01 }}
               >
-                <div className="absolute top-8 right-8 opacity-10 group-hover:opacity-20 transition-fast">
-                  <span className="text-8xl">{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <h3 className="mb-3 group-hover:text-white transition-fast relative z-10">
-                  {service.title}
-                </h3>
-                <p className="text-[#1A1A1A]/70 group-hover:text-white/90 transition-fast relative z-10">
-                  {service.description}
+                <p className="text-sm tracking-[0.3em] text-[#0066FF] group-hover:text-[#C5FF00] transition-fast mb-3">
+                  {String(index + 1).padStart(2, '0')}
                 </p>
+                <h3 className="mb-4 group-hover:text-white transition-fast">{category.title}</h3>
+                <ul className="space-y-2">
+                  {category.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-[#1A1A1A]/75 group-hover:text-white/90 transition-fast"
+                    >
+                      <span className="w-2 h-2 bg-[#C5FF00] rounded-full" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Partners / Tools Section */}
+      <section className="py-20 px-6 bg-[#F5F5F5]">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h2 className="mb-4">Partners & tools we rely on</h2>
+            <p className="text-[#1A1A1A]/70">We use trusted platforms to build faster, measure better, and support growth.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {partnerTools.map((tool) => (
+              <div
+                key={tool.name}
+                className="border border-[#E5E5E5] bg-white p-6 flex items-center justify-center min-h-[110px]"
+              >
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  className="max-h-10 max-w-full object-contain grayscale hover:grayscale-0 transition-fast"
+                />
+              </div>
             ))}
           </div>
         </motion.div>
@@ -167,16 +250,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-8">Join the Architects Network.</h2>
+          <h2 className="mb-8">Stop guessing. Start moving.</h2>
           <p className="mb-12 text-[#1A1A1A]/70">
-            Connect with visionary founders, builders, and innovators shaping the future of business.
+            If your competitors are moving faster, waiting will only cost you more.
           </p>
           <motion.button
             className="bg-[#1A1A1A] text-white px-12 py-4 hover:bg-[#0066FF] transition-fast inline-flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="tracking-wider">JOIN THE NETWORK</span>
+            <span className="tracking-wider">LET'S TALK</span>
             <ArrowRight size={20} />
           </motion.button>
         </motion.div>
@@ -185,8 +268,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Case Studies Preview */}
       <section className="py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto mb-12">
-          <h2 className="mb-4">Case Studies</h2>
-          <p className="text-[#1A1A1A]/70">Our blueprint for success, realized.</p>
+          <h2 className="mb-4">Portfolio Highlights</h2>
+          <p className="text-[#1A1A1A]/70">A quick look at the kinds of business problems we solve and the results we create.</p>
         </div>
         <div
           ref={scrollContainerRef}
@@ -226,7 +309,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="tracking-wider">EXPLORE OUR PORTFOLIO</span>
+            <span className="tracking-wider">VIEW PORTFOLIO</span>
             <ArrowRight size={20} />
           </motion.button>
         </div>

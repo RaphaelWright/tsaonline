@@ -38,7 +38,7 @@ export function ContactPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Let's Build Something Together.
+            Waiting costs more than acting.
           </motion.h1>
 
           <motion.div
@@ -130,9 +130,9 @@ export function ContactPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h2 className="mb-4">Start Your Project</h2>
+          <h2 className="mb-4">Tell us what is holding your business back</h2>
           <p className="text-[#1A1A1A]/70 mb-12">
-            Tell us about your vision, and we'll architect the path to success.
+            Share what is not working now, and we will show you where to improve first.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-8">

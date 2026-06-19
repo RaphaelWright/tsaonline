@@ -31,34 +31,51 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
   const services = [
     {
-      id: 'consulting',
-      title: 'Consulting',
-      philosophy: 'We architect your business foundation. Through deep discovery and strategic analysis, we create blueprints for sustainable growth. Every recommendation is data-driven, every strategy is scalable.',
+      id: 'core',
+      title: 'Core Services',
+      items: [
+        'Web development',
+        'Mobile app development',
+        'UI/UX design',
+        'Motion graphics',
+        'Digital marketing',
+      ],
+      philosophy: 'We deliver the core digital capabilities that help businesses launch faster, look sharper, and perform better across every touchpoint.',
     },
     {
-      id: 'advertising',
-      title: 'Advertising',
-      philosophy: 'Your brand is your building\'s facade. We design advertising campaigns with architectural precision—every message positioned for maximum impact, every touchpoint engineered for conversion.',
+      id: 'growth',
+      title: 'Growth Services',
+      items: [
+        'AI automation',
+        'WhatsApp automation',
+        'Data analytics',
+        'SEO',
+      ],
+      philosophy: 'We turn systems, data, and communication channels into growth engines that increase efficiency and unlock new revenue opportunities.',
     },
     {
-      id: 'development',
-      title: 'Web & Software Development',
-      philosophy: 'Code is our construction material. We build digital products with structural integrity—clean architecture, scalable systems, and user experiences that stand the test of time.',
+      id: 'premium',
+      title: 'Premium Services',
+      items: [
+        'AI agents',
+        'Custom software',
+        'SaaS MVPs',
+        'Cloud solutions',
+        'Cybersecurity',
+      ],
+      philosophy: 'We build high-value, future-ready solutions that give ambitious companies a competitive edge through smarter automation and stronger infrastructure.',
     },
     {
-      id: 'marketing',
-      title: 'Marketing (Digital & Traditional)',
-      philosophy: 'Marketing is the infrastructure of growth. We combine digital innovation with traditional wisdom, creating campaigns that connect, convert, and compound your success.',
-    },
-    {
-      id: 'events',
-      title: 'Events & Planning',
-      philosophy: 'Experiences are architectural moments. We design events as immersive brand environments—every detail orchestrated, every interaction intentional, every memory lasting.',
-    },
-    {
-      id: 'it',
-      title: 'IT Assistance',
-      philosophy: 'Technology is your foundation. We provide structural support for your digital infrastructure—reliable, responsive, and ready to scale as you build.',
+      id: 'recurring',
+      title: 'Recurring Revenue Services',
+      items: [
+        'Managed IT',
+        'Hosting',
+        'Maintenance',
+        'Marketing retainers',
+        'Automation support',
+      ],
+      philosophy: 'We provide ongoing operational support so teams can stay secure, stay visible, and keep improving without losing momentum.',
     },
   ];
 
@@ -128,7 +145,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We Are The Architects of Innovation.
+            You do not need more pressure. You need a better system.
           </motion.h1>
           <motion.p
             className="text-[#1A1A1A]/70 max-w-2xl mx-auto"
@@ -136,8 +153,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Building the future of startups through strategic design, precision development,
-            and architectural thinking. Every great structure starts with a blueprint.
+            Most businesses are not struggling because they do not care. They are struggling because the basics are not strong enough.
           </motion.p>
         </motion.div>
       </section>
@@ -171,20 +187,17 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           viewport={{ once: true }}
         >
           <div>
-            <h2 className="mb-8">Structure. Clarity. Precision.</h2>
+            <h2 className="mb-8">Clear systems help businesses grow with less stress.</h2>
             <p className="mb-6">
-              We believe startups should be designed like architecture — built on structure, not chaos.
-              Every system, every strategy, every line of code we create is intentional, efficient, and scalable.
+              We help remove the small problems that slow teams down, confuse customers, and waste money.
             </p>
             <div className="border-l-4 border-[#1A1A1A] pl-6 my-8 italic">
               <p className="text-xl">
-                "We build for permanence — not prototypes."
+                "When the system is weak, everything feels harder."
               </p>
             </div>
             <p className="mb-6">
-              Like the greatest architectural achievements, we design with the future in mind.
-              Our approach combines timeless principles with modern innovation, creating businesses
-              that don't just launch—they endure.
+              Strong branding, simple processes, and reliable tools help people trust you faster.
             </p>
             <div className="w-24 h-2 bg-[#C5FF00] mt-8" />
           </div>
@@ -215,24 +228,36 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           viewport={{ once: true }}
         >
           <div className="text-center mb-16">
-            <h2 className="mb-4">What We Shape</h2>
-            <p className="text-[#1A1A1A]/70">Our architectural disciplines.</p>
+            <h2 className="mb-4">Where we create real impact</h2>
+            <p className="text-[#1A1A1A]/70">The areas that help businesses move faster, look better, and perform stronger.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                className="aspect-square border border-[#E5E5E5] bg-white p-8 flex flex-col justify-center items-center group hover:bg-[#0066FF] transition-fast cursor-pointer"
+                className="border border-[#E5E5E5] bg-white p-8 group hover:bg-[#0066FF] transition-fast cursor-pointer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.01 }}
                 onClick={() => setSelectedService(service.id)}
               >
-                <h3 className="text-center group-hover:text-white transition-fast">
-                  {service.title}
-                </h3>
+                <p className="text-sm tracking-[0.3em] text-[#0066FF] group-hover:text-[#C5FF00] transition-fast mb-3">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mb-4 group-hover:text-white transition-fast">{service.title}</h3>
+                <ul className="space-y-2">
+                  {service.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 text-[#1A1A1A]/75 group-hover:text-white/90 transition-fast"
+                    >
+                      <span className="w-2 h-2 bg-[#C5FF00] rounded-full" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -292,8 +317,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           viewport={{ once: true }}
         >
           <div className="text-center mb-16">
-            <h2 className="mb-4">How We Build</h2>
-            <p className="text-[#1A1A1A]/70">Our construction methodology.</p>
+            <h2 className="mb-4">How we remove friction</h2>
+            <p className="text-[#1A1A1A]/70">A simple process built to expose the real blockers and fix them fast.</p>
           </div>
           <div className="bg-white border-2 border-[#1A1A1A]">
             {processSteps.map((step, index) => (
@@ -328,57 +353,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </motion.div>
       </section>
 
-      {/* Team Section - "The Architects" */}
-      <section className="py-24 px-6 bg-white">
-        <motion.div
-          className="max-w-7xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Intro Column */}
-            <motion.div
-              className="md:col-span-1 flex flex-col justify-center"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="mb-6">The People Behind the Plans.</h2>
-              <p className="text-[#1A1A1A]/70">
-                Our multidisciplinary team of designers, developers, and strategists think like
-                builders — we turn ideas into structures.
-              </p>
-              <div className="w-16 h-1 bg-[#C5FF00] mt-6" />
-            </motion.div>
-
-            {/* Team Members */}
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                className="group cursor-pointer"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="relative aspect-square mb-4 overflow-hidden border border-[#E5E5E5] group-hover:border-[#0066FF] transition-fast">
-                  <ImageWithFallback
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-fast"
-                  />
-                </div>
-                <h3 className="mb-1">{member.name}</h3>
-                <p className="text-[#0066FF] tracking-wider">{member.role}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
       {/* Vision / CTA Section - "Join the Movement" */}
       <section className="py-32 px-6 bg-[#0066FF] relative overflow-hidden">
         <div className="absolute inset-0 blueprint-grid opacity-20" />
@@ -389,16 +363,16 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-8 text-white">We're Designing the Next Generation of Startups.</h2>
+          <h2 className="mb-8 text-white">The businesses that move first are the ones that act now.</h2>
           <p className="text-white/80 mb-12 max-w-2xl mx-auto">
-            Join a community of visionaries, builders, and innovators who are reshaping the future of business.
+            If your systems, brand, or growth are falling behind, the cost of waiting keeps growing.
           </p>
           <motion.button
             className="bg-transparent text-white px-12 py-4 border-4 border-white hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="tracking-wider">JOIN OUR COMMUNITY</span>
+            <span className="tracking-wider">BOOK A CONSULTATION</span>
             <ArrowRight size={20} />
           </motion.button>
         </motion.div>
@@ -414,10 +388,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-6">Ready to Build Your Future?</h2>
+          <h2 className="mb-6">If you are ready to grow, we are ready to help.</h2>
           <p className="text-[#1A1A1A]/70 mb-12 max-w-2xl mx-auto">
-            Let's architect something extraordinary together. Your vision deserves
-            a team that thinks beyond the blueprint.
+            The right strategy and execution can help your business look stronger, work smoother, and compete better.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
@@ -426,7 +399,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="tracking-wider">START A PROJECT</span>
+              <span className="tracking-wider">BOOK A STRATEGY CALL</span>
             </motion.button>
             <motion.button
               onClick={() => onNavigate('portfolio')}
@@ -434,7 +407,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="tracking-wider">VIEW OUR WORK</span>
+              <span className="tracking-wider">SEE OUR WORK</span>
             </motion.button>
           </div>
         </motion.div>
