@@ -6,7 +6,11 @@ export function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    whatsapp: '',
     company: '',
+    service: '',
+    budget: '',
+    timeline: '',
     message: '',
   });
 
@@ -15,10 +19,21 @@ export function ContactPage() {
     // Handle form submission
     // TODO: Integrate with backend API or email service
     alert('Thank you for reaching out! We will get back to you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      whatsapp: '',
+      company: '',
+      service: '',
+      budget: '',
+      timeline: '',
+      message: '',
+    });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -132,60 +147,144 @@ export function ContactPage() {
         >
           <h2 className="mb-4">Tell us what is holding your business back</h2>
           <p className="text-[#1A1A1A]/70 mb-12">
-            Share what is not working now, and we will show you where to improve first.
+            Share what is not working now, and we will recommend the first system, campaign, or
+            automation to fix.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label htmlFor="name" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
-                YOUR NAME
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
-                placeholder="John Doe"
-              />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="name" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  YOUR NAME
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="company" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  COMPANY / STARTUP
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                  placeholder="Your Company Name"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="email" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  EMAIL ADDRESS
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                  placeholder="john@company.com"
+                />
+              </div>
+
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="whatsapp" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  WHATSAPP NUMBER
+                </label>
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                  placeholder="+233 555 123 456"
+                />
+              </div>
             </div>
 
             <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label htmlFor="email" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
-                EMAIL ADDRESS
+              <label htmlFor="service" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                WHAT DO YOU NEED FIRST?
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
                 onChange={handleChange}
                 required
                 className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
-                placeholder="john@company.com"
-              />
+              >
+                <option value="">Select a service</option>
+                <option value="Website Launch System">Website Launch System</option>
+                <option value="WhatsApp Sales Automation">WhatsApp Sales Automation</option>
+                <option value="Social Growth Retainer">Social Growth Retainer</option>
+                <option value="Startup MVP Build">Startup MVP Build</option>
+                <option value="Business Process Automation">Business Process Automation</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
             </div>
 
-            <div className="border-b-2 border-[#E5E5E5] pb-4">
-              <label htmlFor="company" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
-                COMPANY / STARTUP
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
-                placeholder="Your Company Name"
-              />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="budget" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  BUDGET RANGE
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                >
+                  <option value="">Select a range</option>
+                  <option value="Under $1,000">Under $1,000</option>
+                  <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                  <option value="$3,000 - $7,500">$3,000 - $7,500</option>
+                  <option value="$7,500+">$7,500+</option>
+                  <option value="Need guidance">Need guidance</option>
+                </select>
+              </div>
+
+              <div className="border-b-2 border-[#E5E5E5] pb-4">
+                <label htmlFor="timeline" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
+                  IDEAL TIMELINE
+                </label>
+                <select
+                  id="timeline"
+                  name="timeline"
+                  value={formData.timeline}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A]"
+                >
+                  <option value="">Select a timeline</option>
+                  <option value="Immediately">Immediately</option>
+                  <option value="Within 2 weeks">Within 2 weeks</option>
+                  <option value="This month">This month</option>
+                  <option value="Next 1-3 months">Next 1-3 months</option>
+                  <option value="Still planning">Still planning</option>
+                </select>
+              </div>
             </div>
 
             <div className="border-b-2 border-[#E5E5E5] pb-4">
               <label htmlFor="message" className="block mb-2 tracking-wider text-[#1A1A1A]/70">
-                PROJECT DETAILS
+                WHAT IS SLOWING YOU DOWN?
               </label>
               <textarea
                 id="message"
@@ -195,7 +294,7 @@ export function ContactPage() {
                 required
                 rows={6}
                 className="w-full bg-transparent border-none outline-none p-0 text-[#1A1A1A] resize-none"
-                placeholder="Tell us about your project, goals, and timeline..."
+                placeholder="Tell us what is not working, what you want to improve, and what success should look like..."
               />
             </div>
 

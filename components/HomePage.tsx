@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useRef } from 'react';
 
@@ -41,6 +41,61 @@ export function HomePage({ onNavigate }: HomePageProps) {
         'Automation support',
       ],
     },
+  ];
+
+  const businessOutcomes = [
+    {
+      title: 'More qualified enquiries',
+      description:
+        'Turn your website, social pages, and WhatsApp traffic into clearer enquiry paths with fewer missed leads.',
+    },
+    {
+      title: 'Faster customer response',
+      description:
+        'Use automation and better workflows so prospects get answers before they move on to a competitor.',
+    },
+    {
+      title: 'Stronger online trust',
+      description:
+        'Make your business look active, credible, and ready to serve before a customer ever speaks to you.',
+    },
+    {
+      title: 'Less manual admin',
+      description:
+        'Replace repetitive tasks with simple systems your team can actually use every day.',
+    },
+  ];
+
+  const servicePackages = [
+    {
+      name: 'Website Launch System',
+      fit: 'For businesses that need a stronger first impression.',
+      includes: ['Conversion-focused website', 'Lead capture flow', 'Analytics setup'],
+    },
+    {
+      name: 'WhatsApp Sales Automation',
+      fit: 'For teams losing leads in chats and slow follow-ups.',
+      includes: ['Auto-replies and routing', 'Follow-up sequences', 'Lead tracking structure'],
+    },
+    {
+      name: 'Social Growth Retainer',
+      fit: 'For brands that need consistent content and enquiry handling.',
+      includes: ['Content planning', 'Offer campaigns', 'Social media management'],
+    },
+    {
+      name: 'Startup MVP Build',
+      fit: 'For founders ready to turn an idea into a usable product.',
+      includes: ['Product planning', 'UI/UX design', 'Web app or SaaS MVP'],
+    },
+  ];
+
+  const clientTypes = [
+    'Restaurants',
+    'Real estate businesses',
+    'Service companies',
+    'Retail brands',
+    'Startups',
+    'Consultants',
   ];
 
   const caseStudies = [
@@ -86,7 +141,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     { name: 'Sentry', logo: 'https://sentry-brand.storage.googleapis.com/sentry-logo-black.png' },
     { name: 'Stripe', logo: 'https://stripe.com/img/v3/home/social.png' },
-    
+
     { name: 'Supabase', logo: 'https://supabase.com/images/logo-dark.png' },
     { name: 'Figma', logo: 'https://static.figma.com/app/icon/1/favicon.png' },
   ];
@@ -169,18 +224,70 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             We help businesses build better websites, smarter systems, and stronger growth.
           </motion.p>
-          <motion.button
-            className="bg-[#0066FF] text-white px-12 py-4 border-4 border-[#0066FF] hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3"
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => onNavigate('contact')}
           >
-            <span className="tracking-wider">BOOK A STRATEGY CALL</span>
-            <ArrowRight size={20} />
-          </motion.button>
+            <motion.button
+              className="bg-[#0066FF] text-white px-12 py-4 border-4 border-[#0066FF] hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => onNavigate('contact')}
+            >
+              <span className="tracking-wider">BOOK A STRATEGY CALL</span>
+              <ArrowRight size={20} />
+            </motion.button>
+            <motion.button
+              className="border-4 border-[#1A1A1A] text-[#1A1A1A] px-12 py-4 hover:bg-[#1A1A1A] hover:text-white transition-fast inline-flex items-center gap-3"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => onNavigate('contact')}
+            >
+              <span className="tracking-wider">GET A FREE AUDIT</span>
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Outcomes Section */}
+      <section className="py-24 px-6 bg-[#1A1A1A] text-white">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+            <div>
+              <p className="text-[#C5FF00] tracking-[0.3em] mb-4">WHAT CHANGES</p>
+              <h2 className="text-white mb-6">
+                Your business should be easier to find, trust, and buy from.
+              </h2>
+              <p className="text-white/70">
+                We build the digital systems that move people from interest to enquiry to follow-up
+                without making your team work harder.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {businessOutcomes.map((outcome, index) => (
+                <motion.div
+                  key={outcome.title}
+                  className="border-2 border-white/20 p-6 hover:border-[#C5FF00] transition-fast"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                >
+                  <CheckCircle2 className="text-[#C5FF00] mb-4" size={28} />
+                  <h3 className="text-white mb-3">{outcome.title}</h3>
+                  <p className="text-white/70">{outcome.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -218,6 +325,101 @@ export function HomePage({ onNavigate }: HomePageProps) {
               We fix what slows you down so you can look stronger, work smarter, and grow faster.
             </p>
             <div className="w-20 h-1 bg-[#C5FF00] mt-8" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Service Packages Section */}
+      <section className="py-24 px-6 bg-[#F5F5F5]">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+            <div className="max-w-3xl">
+              <p className="text-[#0066FF] tracking-[0.3em] mb-4">START HERE</p>
+              <h2 className="mb-4">Choose the problem you want solved first</h2>
+              <p className="text-[#1A1A1A]/70">
+                Simple entry points for businesses that want more leads, better systems, or a
+                launch-ready product.
+              </p>
+            </div>
+            <motion.button
+              onClick={() => onNavigate('contact')}
+              className="bg-[#0066FF] text-white px-8 py-4 border-4 border-[#0066FF] hover:bg-white hover:text-[#0066FF] transition-fast inline-flex items-center gap-3 self-start lg:self-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="tracking-wider">ASK WHAT FITS</span>
+              <ArrowRight size={20} />
+            </motion.button>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {servicePackages.map((servicePackage, index) => (
+              <motion.div
+                key={servicePackage.name}
+                className="bg-white border-2 border-[#1A1A1A] p-8 flex flex-col min-h-[420px] hover:bg-[#0066FF] group transition-fast"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+              >
+                <p className="text-sm tracking-[0.3em] text-[#0066FF] group-hover:text-[#C5FF00] transition-fast mb-4">
+                  PACKAGE {String(index + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mb-4 group-hover:text-white transition-fast">
+                  {servicePackage.name}
+                </h3>
+                <p className="text-[#1A1A1A]/70 group-hover:text-white/80 transition-fast mb-8">
+                  {servicePackage.fit}
+                </p>
+                <ul className="space-y-3 mt-auto">
+                  {servicePackage.includes.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-[#1A1A1A]/75 group-hover:text-white/90 transition-fast"
+                    >
+                      <span className="w-2 h-2 bg-[#C5FF00] rounded-full mt-3 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Client Fit Section */}
+      <section className="py-20 px-6 bg-white">
+        <motion.div
+          className="max-w-7xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <h2 className="mb-4">Built for businesses that need action, not decoration.</h2>
+            <p className="text-[#1A1A1A]/70">
+              If customers discover you online, message you before buying, or need repeated
+              follow-up, your business needs systems that support sales.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {clientTypes.map((clientType) => (
+              <div
+                key={clientType}
+                className="border-2 border-[#E5E5E5] px-5 py-4 text-[#1A1A1A] hover:border-[#0066FF] hover:text-[#0066FF] transition-fast"
+              >
+                {clientType}
+              </div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -366,6 +568,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             className="bg-[#1A1A1A] text-white px-12 py-4 hover:bg-[#0066FF] transition-fast inline-flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => onNavigate('contact')}
           >
             <span className="tracking-wider">LET'S TALK</span>
             <ArrowRight size={20} />
