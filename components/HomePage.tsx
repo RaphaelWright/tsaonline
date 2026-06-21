@@ -46,45 +46,41 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const businessOutcomes = [
     {
       title: 'More qualified enquiries',
-      description:
-        'Turn your website, social pages, and WhatsApp traffic into clearer enquiry paths with fewer missed leads.',
+      description: 'Turn traffic into real leads with clear enquiry paths.',
     },
     {
       title: 'Faster customer response',
-      description:
-        'Use automation and better workflows so prospects get answers before they move on to a competitor.',
+      description: 'Reply faster, follow up better, and stop losing warm prospects.',
     },
     {
       title: 'Stronger online trust',
-      description:
-        'Make your business look active, credible, and ready to serve before a customer ever speaks to you.',
+      description: 'Look credible before customers even speak to you.',
     },
     {
       title: 'Less manual admin',
-      description:
-        'Replace repetitive tasks with simple systems your team can actually use every day.',
+      description: 'Replace busywork with simple systems your team will use.',
     },
   ];
 
   const servicePackages = [
     {
       name: 'Website Launch System',
-      fit: 'For businesses that need a stronger first impression.',
+      fit: 'For a website that wins trust fast.',
       includes: ['Conversion-focused website', 'Lead capture flow', 'Analytics setup'],
     },
     {
       name: 'WhatsApp Sales Automation',
-      fit: 'For teams losing leads in chats and slow follow-ups.',
+      fit: 'For faster replies and cleaner follow-up.',
       includes: ['Auto-replies and routing', 'Follow-up sequences', 'Lead tracking structure'],
     },
     {
       name: 'Social Growth Retainer',
-      fit: 'For brands that need consistent content and enquiry handling.',
+      fit: 'For consistent content that brings enquiries.',
       includes: ['Content planning', 'Offer campaigns', 'Social media management'],
     },
     {
       name: 'Startup MVP Build',
-      fit: 'For founders ready to turn an idea into a usable product.',
+      fit: 'For founders ready to launch a real product.',
       includes: ['Product planning', 'UI/UX design', 'Web app or SaaS MVP'],
     },
   ];
@@ -149,7 +145,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const testimonials = [
     {
       quote:
-        'They helped us turn scattered WhatsApp enquiries into a proper follow-up system. Our team finally had structure, faster replies, and fewer missed leads.',
+        'They turned our WhatsApp enquiries into a clear follow-up system. Fewer missed leads, faster replies.',
       name: 'Kwame Mensah',
       role: 'Operations Lead, Service Business',
       region: 'Ghana',
@@ -157,7 +153,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       quote:
-        'The campaign gave our restaurant a clearer voice online. The content, offers, and booking prompts made our social media feel intentional instead of random.',
+        'Our restaurant finally looked serious online. The content and offers brought in better bookings.',
       name: 'Amina Okonkwo',
       role: 'Restaurant Founder',
       region: 'Nigeria',
@@ -165,7 +161,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       quote:
-        'We needed a private internal workflow, not a public product. They understood that immediately and built the automation around how our team actually works.',
+        'They built automation around how our team actually works. Simple, private, and useful.',
       name: 'Omar Al-Fayed',
       role: 'Managing Partner, Logistics Company',
       region: 'United Arab Emirates',
@@ -173,7 +169,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       quote:
-        'The social media handling system helped us organise content, enquiries, and follow-ups across the business. It felt practical, not just decorative.',
+        'They organised our content, enquiries, and follow-ups. It felt practical, not decorative.',
       name: 'Layla Haddad',
       role: 'Marketing Director, Retail Brand',
       region: 'Jordan',
@@ -181,7 +177,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       quote:
-        'Their approach was direct and useful. We came in with a messy customer journey and left with a funnel, email sequence, and clearer sales process.',
+        'We came in with a messy customer journey and left with a clearer sales process.',
       name: 'Sofia Moretti',
       role: 'Founder, Consulting Studio',
       region: 'Italy',
@@ -189,7 +185,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
     {
       quote:
-        'The internal dashboard changed how our team tracks projects. It was built for operations first, which is exactly what we needed.',
+        'The dashboard made project tracking easier. It was built for real operations.',
       name: 'Lucas Schneider',
       role: 'Project Manager, Field Services',
       region: 'Germany',
@@ -214,7 +210,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            If your business is still guessing, you are already losing.
+            Build smarter. Sell faster. Grow with less stress.
           </motion.h1>
           <motion.p
             className="mb-12 text-[#1A1A1A]/70 max-w-2xl mx-auto"
@@ -222,7 +218,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            We help businesses build better websites, smarter systems, and stronger growth.
+            Websites, automation, and digital systems built to bring more customers in.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -264,11 +260,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div>
               <p className="text-[#C5FF00] tracking-[0.3em] mb-4">WHAT CHANGES</p>
               <h2 className="text-white mb-6">
-                Your business should be easier to find, trust, and buy from.
+                Make your business easier to find, trust, and buy from.
               </h2>
               <p className="text-white/70">
-                We build the digital systems that move people from interest to enquiry to follow-up
-                without making your team work harder.
+                We turn interest into enquiries, follow-ups, and sales without adding more work.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
@@ -315,14 +310,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           <div>
             <h2 className="mb-8">
-              Most businesses do not need more effort. They need a better system.
+              You do not need more effort. You need a better system.
             </h2>
             <p className="mb-6">
-              If your website is slow, your marketing is messy, or your team is doing too much by
-              hand, your business is losing time and trust.
+              Slow websites, messy marketing, and manual work cost you trust and sales.
             </p>
             <p className="mb-6">
-              We fix what slows you down so you can look stronger, work smarter, and grow faster.
+              We fix the gaps so your business looks sharper and works better.
             </p>
             <div className="w-20 h-1 bg-[#C5FF00] mt-8" />
           </div>
@@ -341,10 +335,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
             <div className="max-w-3xl">
               <p className="text-[#0066FF] tracking-[0.3em] mb-4">START HERE</p>
-              <h2 className="mb-4">Choose the problem you want solved first</h2>
+              <h2 className="mb-4">Start with the biggest growth blocker</h2>
               <p className="text-[#1A1A1A]/70">
-                Simple entry points for businesses that want more leads, better systems, or a
-                launch-ready product.
+                Pick the fastest path to more leads, better systems, or a product people can use.
               </p>
             </div>
             <motion.button
@@ -405,10 +398,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div>
-            <h2 className="mb-4">Built for businesses that need action, not decoration.</h2>
+            <h2 className="mb-4">Built for businesses that need results, not decoration.</h2>
             <p className="text-[#1A1A1A]/70">
-              If customers discover you online, message you before buying, or need repeated
-              follow-up, your business needs systems that support sales.
+              If customers find you online or message before buying, your systems should help you close.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -434,9 +426,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div className="text-center mb-16">
-            <h2 className="mb-4">The areas that hold businesses back</h2>
+            <h2 className="mb-4">Fix what slows growth</h2>
             <p className="text-[#1A1A1A]/70">
-              We help with the parts that quietly slow growth and cost you opportunities.
+              We improve the digital parts that cost you leads, time, and trust.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -481,9 +473,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h2 className="mb-4">Some Partners & tools we rely on</h2>
+            <h2 className="mb-4">Tools we trust</h2>
             <p className="text-[#1A1A1A]/70">
-              We use trusted platforms to build faster, measure better, and support growth.
+              Reliable platforms for faster builds, better tracking, and stronger growth.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -515,8 +507,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="mb-12">
             <h2 className="mb-4">What clients say</h2>
             <p className="text-[#1A1A1A]/70">
-              Feedback from African, Arab, and European clients across automation, marketing, social
-              media handling, and internal business systems.
+              Clear wins across automation, marketing, social media, and internal systems.
             </p>
           </div>
 
@@ -562,7 +553,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         >
           <h2 className="mb-8">Stop guessing. Start moving.</h2>
           <p className="mb-12 text-[#1A1A1A]/70">
-            If your competitors are moving faster, waiting will only cost you more.
+            The longer you wait, the more leads slip away.
           </p>
           <motion.button
             className="bg-[#1A1A1A] text-white px-12 py-4 hover:bg-[#0066FF] transition-fast inline-flex items-center gap-3"
@@ -581,8 +572,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto mb-12">
           <h2 className="mb-4">Portfolio Highlights</h2>
           <p className="text-[#1A1A1A]/70">
-            Public campaigns, internal business systems, and launch-ready work across automation,
-            marketing, social media, and growth.
+            Campaigns, systems, and products built to move businesses forward.
           </p>
         </div>
         <div

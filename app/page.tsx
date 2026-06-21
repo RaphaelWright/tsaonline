@@ -8,6 +8,7 @@ import { HomePage } from '@/components/HomePage';
 import { AboutPage } from '@/components/AboutPage';
 import { PortfolioPage } from '@/components/PortfolioPage';
 import { ContactPage } from '@/components/ContactPage';
+import { MessageButton } from '@/components/MessageButton';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -51,6 +52,7 @@ export default function App() {
     <div className="relative min-h-screen bg-white">
       <CustomCursor />
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+      <MessageButton />
 
       {/* Page Transition Overlay */}
       <AnimatePresence>
